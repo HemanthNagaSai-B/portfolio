@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
         'Real-time matching and notification system',
         'Responsive design with modern UI/UX'
       ],
-      github: 'https://github.com/hemanthbolisetty/faculty-ta-matching',
+      github: 'https://github.com/HemanthNagaSai-B/TA-RA-Application-Filtering-System',
       live: 'https://faculty-ta-matching.vercel.app',
       icon: Database,
       category: 'Full-Stack'
@@ -29,8 +29,8 @@ const Projects: React.FC = () => {
         'Interactive hover popups with detailed statistics',
         'Responsive design for all devices'
       ],
-      github: 'https://github.com/hemanthbolisetty/crickviz',
-      live: 'https://crickviz.vercel.app',
+      github: 'https://github.com/HemanthNagaSai-B/CricViz',
+      live: 'https://hemanthnagasai-b.github.io/CricViz/',
       icon: BarChart3,
       category: 'Data Visualization'
     },
@@ -59,7 +59,7 @@ const Projects: React.FC = () => {
         '95% Jest test coverage for reliability',
         'Agile methodology simulation tools'
       ],
-      github: 'https://github.com/hemanthbolisetty/scrum-simulator',
+      github: 'https://github.com/HemanthNagaSai-B/ScrumSimulator',
       live: 'https://scrum-simulator.vercel.app',
       icon: FolderOpen,
       category: 'Backend'
@@ -178,24 +178,30 @@ const Projects: React.FC = () => {
 
                 {/* Links */}
                 <div className="flex space-x-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors duration-300"
-                  >
-                    <Github size={16} className="mr-2" />
-                    Code
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors duration-300"
-                  >
-                    <ExternalLink size={16} className="mr-2" />
-                    Live Demo
-                  </a>
+                  {/* Show Code button only for projects except Faculty/TA Matching Platform and Air Quality Tracker */}
+                  {project.title !== 'Faculty/TA Matching Platform' && project.title !== 'Air Quality Tracker' && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors duration-300"
+                    >
+                      <Github size={16} className="mr-2" />
+                      Code
+                    </a>
+                  )}
+                  {/* Show Live Demo button only for CrickViz */}
+                  {project.title === 'CrickViz' && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors duration-300"
+                    >
+                      <ExternalLink size={16} className="mr-2" />
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
