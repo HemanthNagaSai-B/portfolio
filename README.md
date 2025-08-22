@@ -21,23 +21,6 @@ A modern, responsive personal portfolio website built with React, TypeScript, an
 - **Routing**: React Router DOM
 - **Deployment**: Vercel
 
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── Navbar.tsx          # Navigation component with dark mode toggle
-│   ├── Home.tsx            # Hero section and introduction
-│   ├── Education.tsx       # Academic background
-│   ├── Experience.tsx      # Professional experience
-│   ├── Skills.tsx          # Technical skills with progress bars
-│   ├── Projects.tsx        # Project showcase
-│   ├── Contact.tsx         # Contact form and information
-│   └── Footer.tsx          # Footer with social links
-├── App.tsx                 # Main app component with routing
-├── index.css              # Global styles and Tailwind imports
-└── index.tsx              # App entry point
-```
 
 ## 🎨 Design Features
 
@@ -145,14 +128,6 @@ colors: {
 }
 ```
 
-### Content
-Update the content in each component file to match your information:
-- Personal details in `Home.tsx`
-- Education history in `Education.tsx`
-- Work experience in `Experience.tsx`
-- Skills and proficiency levels in `Skills.tsx`
-- Project details in `Projects.tsx`
-- Contact information in `Contact.tsx`
 
 ### Styling
 Modify the Tailwind classes in each component to adjust the design to your preferences.
@@ -164,17 +139,7 @@ Modify the Tailwind classes in each component to adjust the design to your prefe
 - **Loading Speed**: Fast initial load times
 - **SEO**: Proper meta tags and structured data
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📞 Contact
 
@@ -192,4 +157,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with ❤️ by Hemanth Naga Sai Bolisetty
