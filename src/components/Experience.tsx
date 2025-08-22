@@ -6,49 +6,54 @@ const Experience: React.FC = () => {
   const experienceData = [
     {
       company: 'Vizworld Inc.',
+      companyUrl: 'https://vizworld.com/',
       position: 'Software Developer',
-      period: 'Jun 2025 – Present',
+      period: 'Jun 2025 – Current',
       location: 'Remote',
       description: 'Full-stack development role focusing on building scalable web applications and student opportunity portals.',
-      technologies: ['Next.js', 'Tailwind CSS', 'Django', 'Vercel', 'CI/CD'],
+      technologies: ['Next.js', 'Tailwind CSS', 'Django', 'Vercel','PostgreSQL', 'CI/CD', 'REST APIs', 'Postman'],
       achievements: [
-        'Built full-stack student opportunity portal with Next.js, Tailwind, and Django',
-        'Implemented comprehensive CI/CD pipeline with automated testing',
-        'Deployed applications on Vercel with optimized performance',
-        'Developed RESTful APIs and integrated third-party services',
-        'Collaborated with cross-functional teams to deliver high-quality software'
+        'Boosted productivity 30% by delivering a full-stack student portal using Next.js, Tailwind, Django, and Supabase.',
+        'Achieved 100% API uptime by building Django REST endpoints and integrating PostgreSQL/Supabase.',
+        'Cut release time 25% using automated CI/CD on Vercel with Git-based rollback and staging.',
+        'Secured platform via JWT role access, CORS, and input validation on backend and frontend.',
+        'Collaborated with product and QA teams to prioritize backlog, resolve bugs, and deliver sprint goals on time.'
       ],
       icon: Code
     },
     {
       company: 'TCS',
+      companyUrl: 'https://www.tcs.com/',
       position: 'Software Engineer',
       period: 'Nov 2021 – Jun 2023',
       location: 'Hyderabad, India',
-      description: 'Firmware development role specializing in automotive safety systems and embedded software.',
-      technologies: ['C', 'Jenkins', 'Docker', 'CAN/LIN', 'Embedded Systems'],
+      description: 'Built Spring Boot microservices and Kafka pipelines for automotive safety systems in an Agile environment.',
+      technologies: [
+'Spring Boot', 'Kafka', 'Kafka Streams', 'Postman', 'OAuth 2.0 / OIDC / JWT', 'Jenkins', 'Docker', 'Git'],
       achievements: [
-        'Developed firmware for Passive Safety Systems in automotive applications',
-        'Implemented CI/CD pipelines using Jenkins and Docker containers',
-        'Conducted CAN/LIN protocol analysis and debugging',
-        'Collaborated with hardware teams for system integration',
-        'Maintained code quality through rigorous testing and documentation'
+        'Delivered high-quality automotive safety software in Agile; developed and maintained multiple Spring Boot APIs with 15+ routes, validated via Postman.',
+        'Improved Kafka-based ECU data processing by implementing distributed consumers, increasing throughput 30% and reducing latency from 3.5s to 0.7s.',
+        'Built a Spring Boot microservice for real-time vehicle sensor data using Kafka Streams, enabling scalable and fault-tolerant diagnostics handling.',
+        'Secured APIs and microservices with OAuth 2.0, OpenID Connect, and JWT authentication for industry-standard access control.',
+        'Coordinated with cross-functional teams to implement scalable architecture changes for ECU modules.',
+        'Implemented and optimized a CI/CD pipeline for seamless software delivery, utilizing Jenkins, Docker, and Git.',
+        'Wrote and maintained unit, regression, and functional test suites to catch defects before release.',
+        'Led a two-person team to bootstrap a new microservice from RFC to first production release.'
       ],
       icon: Cpu
     },
     {
       company: 'CueMath',
-      position: 'Software Developer Intern',
+      companyUrl: 'https://www.cuemath.com/',
+      position: 'Software Developer',
       period: 'Jan 2021 – Jun 2021',
       location: 'Remote',
-      description: 'Educational technology development focusing on JavaScript optimization and interactive learning tools.',
-      technologies: ['JavaScript', 'GeoGebra', 'Web Development', 'Educational Tech'],
+      description: 'Worked on JavaScript-based learning platforms with a focus on performance, analytics, and content integration.',
+      technologies: ['JavaScript', 'GeoGebra', 'Web Development', 'Educational Tech', 'Performance', 'User Analytics',],
       achievements: [
-        'Optimized JavaScript learning applications for better performance',
-        'Built interactive GeoGebra tools to improve student engagement',
-        'Implemented responsive design principles for mobile compatibility',
-        'Conducted user testing and gathered feedback for improvements',
-        'Collaborated with educational content teams'
+        'Improved app performance by debugging and optimizing JavaScript-based learning platforms.',
+        'Researched user interaction data and provided insights that guided curriculum updates and new feature development.',
+        'Integrated new content modules via REST APIs, ensuring seamless backend communication and data consistency.'
       ],
       icon: Database
     }
@@ -132,9 +137,23 @@ const Experience: React.FC = () => {
                         {experience.position}
                       </h3>
                       <div className="flex items-center text-lg text-primary-600 font-medium mb-2">
-                        <span>{experience.company}</span>
-                        <ExternalLink size={16} className="ml-2" />
-                      </div>
+                      {experience.companyUrl ? (
+                        <a
+                          href={experience.companyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline flex items-center"
+                        >
+                          <span>{experience.company}</span>
+                          <ExternalLink size={16} className="ml-2" />
+                        </a>
+                      ) : (
+                        <>
+                          <span>{experience.company}</span>
+                          <ExternalLink size={16} className="ml-2" />
+                        </>
+                      )}
+                    </div>
                     </div>
                     <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mt-2 md:mt-0">
                       <Calendar size={16} />
